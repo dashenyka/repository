@@ -91,6 +91,15 @@ def get_nomer(nomer):
         return e[int(nomer_str[0])] + ' ' + get_nomer_slovo(int(nomer_str[1:]))
 
 
+def get_rubles_konets(nomer):
+    last_digit = nomer % 10
+    if last_digit == 1 and nomer != 11:
+        return 'рубль'
+    elif last_digit in [2, 3, 4] and (nomer < 10 or nomer > 20):
+        return 'рубля'
+    else:
+        return 'рублей'
+
 
 def main():
     nomer = int(input('Введите число от 1 до 100000: '))
